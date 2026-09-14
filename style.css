@@ -129,3 +129,34 @@ body {
 .hero a:hover {
   text-decoration: underline;
 }
+/* 文章独立页面 */
+.article-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.article-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.article-meta {
+  color: #888888;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+
+.article-content p {
+  margin-bottom: 1.2em;
+  text-align: justify;
+}
+
+.article-content h2 {
+  font-size: 1.3rem;
+  margin: 2em 0 0.8em;
+}
+
+.article-content a {
+  color: #1a5fb4;
+}
