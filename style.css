@@ -165,3 +165,62 @@ body {
   color: #666666;
   letter-spacing: 2px; 
 }
+/* 二级页面标题 */
+.page-header {
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #888888;
+  font-size: 0.95rem;
+}
+
+/* 分类卡片网格：一行三个 */
+.category-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.category-card {
+  display: block;
+  padding: 32px 24px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffffff;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.category-card h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.category-card p {
+  color: #999999;
+  font-size: 0.85rem;
+}
+
+/* 窄屏时分类卡片变一列 */
+@media (max-width: 720px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
