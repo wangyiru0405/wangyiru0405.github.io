@@ -224,3 +224,44 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* 作品卡片：一行一个长卡片 */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.work-card {
+  display: block;
+  padding: 24px 22px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.work-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: #d0d0d0;
+}
+
+.work-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.work-card:hover h3 {
+  color: #1a5fb4;
+}
+
+.work-card .work-meta {
+  font-size: 0.85rem;
+  color: #999999;
+}
