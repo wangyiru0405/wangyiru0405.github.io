@@ -160,3 +160,8 @@ body {
 .article-content a {
   color: #1a5fb4;
 }
+.nav-motto {
+  font-size: 0.95rem;
+  color: #666666;
+  letter-spacing: 2px; 
+}
