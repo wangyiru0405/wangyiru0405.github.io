@@ -265,3 +265,26 @@ body {
   font-size: 0.85rem;
   color: #999999;
 }
+/* 卡片内链接居中 */
+.card-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-link {
+  color: #111111;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
