@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网站更新手册 · 王一如</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><a href="index.html" style="text-decoration:none;color:inherit;">王一如</a></div>
+    <p class="nav-motto"><em>由艰难而致高远</em></p>
+  </nav>
+
+  <main class="article-container">
+
+    <h1>网站更新手册</h1>
+    <p class="article-meta">给自己看的操作笔记 · 更新于 2026-09</p>
+
+    <div class="guide-toc">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#basic">一、基本操作</a></li>
+        <li><a href="#home">二、改首页信息</a></li>
+        <li><a href="#news">三、加新闻作品</a></li>
+        <li><a href="#photo">四、加摄影集图集</a></li>
+        <li><a href="#upload">五、上传图片</a></li>
+        <li><a href="#path">六、路径规则</a></li>
+        <li><a href="#faq">七、常见问题</a></li>
+      </ul>
+    </div>
+
+    <article class="article-content">
+
+      <h2 id="basic">一、基本操作</h2>
+      <ol>
+        <li>打开仓库：<code>github.com/wangyiru0405/wangyiru0405.github.io</code></li>
+        <li>点要改的文件 → 点右上角铅笔图标（Edit this file）</li>
+        <li>修改代码</li>
+        <li>点右上角 <strong>Commit changes...</strong> → 弹窗里再点绿色 <strong>Commit changes</strong></li>
+        <li>等 5–10 分钟，打开网站按 <strong>Ctrl + F5</strong> 强制刷新</li>
+      </ol>
+      <p><strong>快捷编辑</strong>：在仓库页面按键盘 <code>.</code>（点号），会打开在线编辑器，改完点左侧 Source Control 提交。</p>
+      <p><strong>新建文件</strong>：仓库根目录点 <strong>Add file → Create new file</strong>。文件名框里可以直接输入 <code>photos/album-3.html</code>，GitHub 会自动建文件夹。</p>
+
+      <h2 id="home">二、改首页信息</h2>
+      <p>文件：<code>index.html</code></p>
+
+      <h3>改名字、学校、邮箱</h3>
+      <p>找到这一段：</p>
+      <pre><code>&lt;header class="hero"&gt;
+  &lt;h1&gt;你好，我是王一如&lt;/h1&gt;
+  &lt;p&gt;南京大学新闻传播学院在读研究生 | 关注学术研究、摄影作品与新闻写作。&lt;/p&gt;
+  &lt;p&gt;我的邮箱：221810031@smail.nju.edu.cn&lt;/p&gt;
+  &lt;p&gt;
+    &lt;a href="https://github.com/wangyiru0405"&gt;GitHub&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/header&gt;</code></pre>
+      <p>直接改里面的文字就行，标签不要动。</p>
+
+      <h3>改顶部格言</h3>
+      <p>找到：</p>
+      <pre><code>&lt;p class="nav-motto"&gt;&lt;em&gt;由艰难而致高远&lt;/em&gt;&lt;/p&gt;</code></pre>
+      <p>把「由艰难而致高远」换成你想写的句子，<code>&lt;em&gt;</code> 保证斜体。</p>
+
+      <h3>改学术作品</h3>
+      <p>找到学术作品卡片里的 <code>&lt;ul class="item-list"&gt;</code>，一条论文就是一整块：</p>
+      <pre><code>&lt;li&gt;
+  &lt;a href="papers/academic-paper-1.pdf" target="_blank"&gt;论文标题&lt;/a&gt;
+  &lt;span class="item-meta"&gt;年份 · 期刊名&lt;/span&gt;
+&lt;/li&gt;</code></pre>
+      <p>加论文就复制这一块，粘在 <code>&lt;/ul&gt;</code> 前面；删论文就整块删掉。</p>
+
+      <h2 id="news">三、加新闻作品</h2>
+      <p>新闻作品分六个分类，每类一个页面，都在 <code>news/</code> 文件夹里：</p>
+      <ul>
+        <li><code>news/data.html</code> 数据新闻</li>
+        <li><code>news/investigative.html</code> 调查性报道</li>
+        <li><code>news/documentary.html</code> 纪实报道</li>
+        <li><code>news/factcheck.html</code> 事实核查</li>
+        <li><code>news/video.html</code> 视频新闻</li>
+        <li><code>news/commentary.html</code> 新闻评论</li>
+      </ul>
+
+      <h3>加一条作品</h3>
+      <p>打开对应的分类页，找到 <code>&lt;div class="work-grid"&gt;</code>，在里面加一块：</p>
+      <pre><code>&lt;a class="work-card" href="稿件链接" target="_blank"&gt;
+  &lt;h3&gt;作品标题&lt;/h3&gt;
+  &lt;div class="work-meta"&gt;媒体名 · 日期&lt;/div&gt;
+&lt;/a&gt;</code></pre>
+      <p>粘在 <code>&lt;/div&gt;</code> 前面。一行自动排一个。</p>
+
+      <h2 id="photo">四、加摄影集图集</h2>
+      <p>摄影集分两层：总览页 + 每个图集详情页。</p>
+
+      <h3>加一个新图集</h3>
+      <ol>
+        <li>建文件夹：<strong>Add file → Create new file</strong>，文件名 <code>images/album-3/README.md</code>，内容随便写，Commit</li>
+        <li>进 <code>images/album-3</code> 文件夹 → <strong>Add file → Upload files</strong> → 上传封面 <code>cover.jpg</code> 和照片 <code>01.jpg</code>、<code>02.jpg</code>……</li>
+        <li>新建详情页：<strong>Add file → Create new file</strong>，文件名 <code>photos/album-3.html</code>，复制 <code>photos/album-1.html</code> 的内容，改标题和图片路径</li>
+        <li>在 <code>photography.html</code> 里加一张卡片：
+          <pre><code>&lt;a class="photo-card" href="photos/album-3.html"
+   style="background-image:url('images/album-3/cover.jpg');"&gt;
+  &lt;div class="photo-overlay"&gt;
+    &lt;h3&gt;图集标题&lt;/h3&gt;
+    &lt;div class="work-meta"&gt;张数 · 年份&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+        </li>
+      </ol>
+
+      <h3>图集里加照片</h3>
+      <p>打开 <code>photos/album-3.html</code>，在 <code>&lt;div class="album-grid"&gt;</code> 里加一块：</p>
+      <pre><code>&lt;a href="../images/album-3/07.jpg" target="_blank"&gt;
+  &lt;img src="../images/album-3/07.jpg" alt="照片7"&gt;
+&lt;/a&gt;</code></pre>
+
+      <h2 id="upload">五、上传图片</h2>
+      <ol>
+        <li>先建好文件夹（见上）</li>
+        <li>进目标文件夹 → <strong>Add file → Upload files</strong></li>
+        <li>把图片拖进去</li>
+        <li>点下方 <strong>Commit changes</strong></li>
+      </ol>
+
+      <h3>图片太大的解决办法</h3>
+      <p>GitHub 网页上传单文件限制约 <strong>25MB</strong>。超了会报错。</p>
+      <ul>
+        <li><strong>推荐</strong>：用 <a href="https://tinypng.com" target="_blank">TinyPNG</a> 或 <a href="https://squoosh.app" target="_blank">Squoosh</a> 压缩后再传</li>
+        <li>网页展示的图片压到 <strong>200KB 以下</strong>足够清晰</li>
+        <li>大图可以转成 <code>.webp</code> 格式，体积更小</li>
+      </ul>
+
+      <h3>图片命名规则</h3>
+      <ul>
+        <li>只用<strong>英文、数字、连字符</strong>：<code>photo-01.jpg</code></li>
+        <li>不要用中文、空格、特殊符号</li>
+        <li>大小写要一致：<code>Photo.jpg</code> 和 <code>photo.jpg</code> 是两个文件</li>
+      </ul>
+
+      <h2 id="path">六、路径规则</h2>
+      <p>这是最容易出错的地方。看你的 HTML 文件在<strong>哪一层</strong>：</p>
+
+      <h3>在根目录的文件（index.html、photography.html、news.html）</h3>
+      <table>
+        <tr><th>想指向</th><th>写</th></tr>
+        <tr><td>另一个根目录页面</td><td><code>news.html</code></td></tr>
+        <tr><td>子文件夹的页面</td><td><code>news/data.html</code></td></tr>
+        <tr><td>图片</td><td><code>images/album-1/01.jpg</code></td></tr>
+        <tr><td>样式</td><td><code>style.css</code></td></tr>
+      </table>
+
+      <h3>在子文件夹的文件（news/data.html、photos/album-1.html）</h3>
+      <table>
+        <tr><th>想指向</th><th>写</th></tr>
+        <tr><td>根目录页面</td><td><code>../index.html</code></td></tr>
+        <tr><td>同层其他页面</td><td><code>data.html</code></td></tr>
+        <tr><td>图片</td><td><code>../images/album-1/01.jpg</code></td></tr>
+        <tr><td>样式</td><td><code>../style.css</code></td></tr>
+      </table>
+
+      <p><strong>口诀</strong>：子文件夹里的文件，往上找加 <code>../</code>；根目录的文件不加。</p>
+
+      <h2 id="faq">七、常见问题</h2>
+
+      <h3>1. 改了没生效</h3>
+      <ul>
+        <li>等 5–10 分钟，GitHub Pages 有构建延迟</li>
+        <li>按 <strong>Ctrl + F5</strong> 强制刷新，或用无痕窗口</li>
+        <li>确认已经点了 <strong>Commit changes</strong></li>
+      </ul>
+
+      <h3>2. 链接点开 404</h3>
+      <ul>
+        <li>检查文件名大小写是否完全一致</li>
+        <li>检查路径 <code>../</code> 多了或少了</li>
+        <li>用浏览器直接访问完整网址测试：<code>https://wangyiru0405.github.io/具体路径</code></li>
+        <li>GitHub 上按 <code>t</code> 键搜索文件名，看它实际在哪</li>
+      </ul>
+
+      <h3>3. 图片不显示</h3>
+      <ul>
+        <li>确认图片已经上传到对应文件夹</li>
+        <li>确认 HTML 里的文件名和实际文件名一模一样</li>
+        <li>检查路径：根目录写 <code>images/...</code>，子文件夹写 <code>../images/...</code></li>
+      </ul>
+
+      <h3>4. 上传图片失败</h3>
+      <ul>
+        <li>图片超过 25MB → 压缩后再传</li>
+        <li>文件名含中文或空格 → 改成英文数字</li>
+      </ul>
+
+      <h3>5. 想删掉一个页面</h3>
+      <ul>
+        <li>打开文件 → 右上角垃圾桶图标 → Commit</li>
+        <li>记得去别的页面删掉指向它的链接，否则会 404</li>
+      </ul>
+
+      <h3>6. 网页样式乱了</h3>
+      <ul>
+        <li>检查 <code>style.css</code> 里有没有重复或冲突的规则</li>
+        <li>确认 HTML 里的 <code>class</code> 名和 CSS 里的一致</li>
+      </ul>
+
+      <h3>7. 误删了文件想找回</h3>
+      <p>仓库主页 → <strong>Commits</strong> → 找到删除前的那次提交 → 里面能看到文件内容，复制出来重建。</p>
+
+      <hr style="margin:40px 0;border:none;border-top:1px solid #eeeeee;">
+
+      <p style="color:#999;font-size:0.9rem;">这个页面只有你自己知道地址，可以随时打开查。地址：<code>wangyiru0405.github.io/guide.html</code></p>
+
+    </article>
+
+  </main>
+
+</body>
+</html>
