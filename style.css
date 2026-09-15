@@ -494,3 +494,108 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* 手册目录 */
+.guide-toc {
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 32px 0 40px;
+}
+
+.guide-toc h2 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+  color: #666666;
+  font-weight: 600;
+}
+
+.guide-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.guide-toc a {
+  color: #1a5fb4;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.guide-toc a:hover {
+  text-decoration: underline;
+}
+
+/* 手册正文 */
+.article-content h3 {
+  font-size: 1.05rem;
+  margin: 1.6em 0 0.6em;
+  color: #333333;
+}
+
+.article-content ol,
+.article-content ul {
+  padding-left: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.article-content li {
+  margin-bottom: 0.5em;
+}
+
+.article-content code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: #c0392b;
+  font-family: Consolas, Monaco, monospace;
+}
+
+.article-content pre {
+  background-color: #f8f8f8;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 12px 0 20px;
+}
+
+.article-content pre code {
+  background: none;
+  padding: 0;
+  color: #333333;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 0.9rem;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid #eeeeee;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.article-content th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+
+.article-content hr {
+  border: none;
+  border-top: 1px solid #eeeeee;
+}
+
+.article-content a {
+  color: #1a5fb4;
+}
