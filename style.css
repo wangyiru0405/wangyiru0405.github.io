@@ -288,3 +288,92 @@ body {
 .card-link:hover {
   text-decoration: underline;
 }
+/* 摄影集网格：一行三个 */
+.photo-grid-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.photo-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.photo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 半透明遮罩：透明度较低，图片仍可见 */
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  transition: background 0.25s;
+}
+
+.photo-card:hover .photo-overlay {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.photo-overlay h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.5;
+}
+
+.photo-overlay .work-meta {
+  font-size: 0.8rem;
+  color: #555555;
+  margin-top: 6px;
+}
+
+/* 链接卡片：没有背景图，用浅灰底 */
+.photo-card-link {
+  background-color: #f7f7f7;
+  border: 1px solid #ececec;
+}
+
+.photo-card-link .photo-overlay {
+  background: transparent;
+}
+
+.photo-card-link:hover .photo-overlay {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* 窄屏：一行两个，再窄变一个 */
+@media (max-width: 800px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
